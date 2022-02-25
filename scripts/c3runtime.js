@@ -3754,14 +3754,15 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Cnds.OnLayoutStart,
 		C3.Plugins.Audio.Acts.AddRemoteURL,
 		C3.Plugins.AJAX.Acts.Request,
-		C3.Plugins.Touch.Cnds.OnTapGestureObject,
 		C3.Plugins.Audio.Acts.PlayByName,
+		C3.Plugins.Touch.Cnds.OnTapGestureObject,
 		C3.Plugins.Audio.Cnds.PreloadsComplete,
 		C3.Plugins.AJAX.Cnds.OnComplete,
 		C3.Plugins.Browser.Acts.ConsoleLog,
 		C3.Plugins.AJAX.Exps.LastData,
 		C3.Plugins.Json.Acts.Parse,
 		C3.Plugins.System.Cnds.For,
+		C3.Plugins.System.Exps.replace,
 		C3.Plugins.Json.Exps.Get,
 		C3.Plugins.System.Acts.AddVar
 	];
@@ -3878,17 +3879,17 @@ function or(l, r)
 }
 
 self.C3_ExpressionFuncs = [
-		() => "https://quran.kemenag.go.id/cmsq/source/s01/114002.mp3",
+		() => "https://cdn.islamic.network/quran/audio/64/ar.alafasy/6231.mp3",
 		() => "audio/webm; codecs=opus",
 		() => "surah",
 		() => "data",
 		() => "https://api.quran.sutanlab.id/surah/114",
+		() => 0,
+		() => "",
 		p => {
 			const n0 = p._GetNode(0);
 			return () => and("surah-", (n0.ExpInstVar() + 1));
 		},
-		() => 0,
-		() => "",
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			return () => f0();
@@ -3900,9 +3901,10 @@ self.C3_ExpressionFuncs = [
 		},
 		() => 6,
 		p => {
-			const n0 = p._GetNode(0);
-			const v1 = p._GetNode(1).GetVar();
-			return () => n0.ExpObject((and(".data.verses.", v1.GetValue()) + ".audio.primary"));
+			const f0 = p._GetNode(0).GetBoundMethod();
+			const n1 = p._GetNode(1);
+			const v2 = p._GetNode(2).GetVar();
+			return () => f0(n1.ExpObject((and(".data.verses.", v2.GetValue()) + ".audio.primary")), "https://", "http://");
 		},
 		p => {
 			const v0 = p._GetNode(0).GetVar();
