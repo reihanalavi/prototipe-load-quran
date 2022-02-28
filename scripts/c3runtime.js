@@ -4875,8 +4875,6 @@ self.C3_GetObjectRefTable = function () {
 		C3.Behaviors.lunarray_LiteTween.Acts.Start,
 		C3.Plugins.Sprite.Acts.SetY,
 		C3.Plugins.System.Acts.GoToLayout,
-		C3.Plugins.Audio.Acts.AddRemoteURL,
-		C3.Plugins.Audio.Acts.PlayByName,
 		C3.Plugins.Touch.Cnds.OnTouchStart,
 		C3.Plugins.Touch.Exps.X,
 		C3.Plugins.Touch.Exps.Y,
@@ -4890,6 +4888,8 @@ self.C3_GetObjectRefTable = function () {
 		C3.Behaviors.lunarray_LiteTween.Acts.SetTarget,
 		C3.Plugins.Sprite.Exps.ImageWidth,
 		C3.Plugins.Sprite.Exps.ImageHeight,
+		C3.Plugins.Audio.Acts.AddRemoteURL,
+		C3.Plugins.Audio.Acts.PlayByName,
 		C3.Plugins.Sprite.Cnds.IsBoolInstanceVarSet,
 		C3.Plugins.Sprite.Acts.SetMirrored,
 		C3.Behaviors.Sin.Acts.SetPeriod,
@@ -5040,10 +5040,6 @@ self.C3_ExpressionFuncs = [
 		() => 2880,
 		() => 2,
 		() => 580,
-		() => "https://192.168.8.106/test-quran/1.mp3",
-		() => "audio/webm; codecs=opus",
-		() => "ok",
-		() => "",
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			return () => f0();
@@ -5076,6 +5072,10 @@ self.C3_ExpressionFuncs = [
 			return () => (Math.abs(n0.ExpObject()) * 1);
 		},
 		() => 97,
+		() => "https://192.168.8.106/test-quran/1.mp3",
+		() => "audio/webm; codecs=opus",
+		() => "ok",
+		() => "",
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			return () => f0(4, 5, 6, 7, 8);
