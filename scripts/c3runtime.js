@@ -5072,7 +5072,7 @@ self.C3_ExpressionFuncs = [
 			return () => (Math.abs(n0.ExpObject()) * 1);
 		},
 		() => 97,
-		() => "https://192.168.8.106/test-quran/1.mp3",
+		() => "/192.168.8.106/test-quran/1.mp3",
 		() => "audio/webm; codecs=opus",
 		() => "ok",
 		() => "",
