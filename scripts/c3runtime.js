@@ -3774,7 +3774,7 @@ self.C3_ExpressionFuncs = [
 			return () => (("{text:'" + f0()) + "', action : 'TashkeelText'}");
 		},
 		() => "text",
-		() => "http://tahadz.com/mishkal/ajaxGet",
+		() => "https://tahadz.com/mishkal/ajaxGet",
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			return () => (("{text:" + f0()) + ", action : TashkeelText}");
